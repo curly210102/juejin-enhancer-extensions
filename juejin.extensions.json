@@ -1,0 +1,18 @@
+{
+  "activity": {
+    "title": "活动",
+    "extensions": ["OctoberPost"]
+  },
+  "efficient": {
+    "title": "效率工具",
+    "extensions": []
+  },
+  "data": {
+    "title": "数据统计",
+    "extensions": []
+  },
+  "others": {
+    "title": "其他",
+    "extensions": []
+  }
+}

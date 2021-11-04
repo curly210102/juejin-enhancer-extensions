@@ -1,3 +1,8 @@
+declare function onAddLocalJuejinExtension(
+  filePath: string,
+  code: string
+): void;
+declare function onRemoveLocalJuejinExtension(): void;
 declare function onAddJuejinExtension(
   slug: string,
   { url: string, version: string }

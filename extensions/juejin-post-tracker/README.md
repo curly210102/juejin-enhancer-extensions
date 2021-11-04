@@ -1,8 +1,8 @@
 ---
-title: 每月更文小助手
+title: 更文活动小助手
 description: 追踪每月更文活动，推算当前参与进度
 version: 0.0.1,
-rawURL: https://github.com/curly210102/UserScripts/raw/main/Juejin_Enhancer/Juejin_activities.user.js
+rawURL: https://gitee.com/curlly-brackets/juejin-post-tracker/raw/main/main.user.js
 preview: /preview.png
 author: Curly Brackets
 repo: https://github.com/curly210102/UserScripts

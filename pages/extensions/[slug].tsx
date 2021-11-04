@@ -25,10 +25,10 @@ const Extension: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 
       <header className="border-b mb-10 py-4 text-center space-y-2">
         <h1 className="font-bold text-4xl">{title}</h1>
-        <p className="text-gray-500">{author}</p>
-        <p>
+        <div className="text-gray-500">{author}</div>
+        <div>
           <Button slug={slug} url={rawURL} version={version} />
-        </p>
+        </div>
       </header>
 
       <article
@@ -52,7 +52,8 @@ export const getStaticProps: GetStaticProps<
       notFound: true,
     };
   }
-  const { content, ...otherData } = getExtensionBySlug(slug, [
+
+  const extension = getExtensionBySlug(slug, [
     "title",
     "rawURL",
     "description",
@@ -62,6 +63,13 @@ export const getStaticProps: GetStaticProps<
     "repo",
     "version",
   ]);
+  if (!extension) {
+    return {
+      notFound: true,
+    };
+  }
+
+  const { content, ...otherData } = extension;
   return {
     props: {
       slug,

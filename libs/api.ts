@@ -40,7 +40,7 @@ export const getAllCategories = () => {
             "description",
           ])
         )
-        .filter(Boolean),
+        .filter(Boolean) as CategoryType["items"],
     };
 
     if (extension.items.length > 0) {
@@ -52,26 +52,30 @@ export const getAllCategories = () => {
 };
 
 export const getExtensionBySlug = (slug: string, fields: string[]) => {
-  const filePath = join(extensionDirectory, slug, "README.md");
-  const fileContent = fs.readFileSync(filePath, "utf8");
-  const { data, content } = matter(fileContent);
+  try {
+    const filePath = join(extensionDirectory, slug, "README.md");
+    const fileContent = fs.readFileSync(filePath, "utf8");
+    const { data, content } = matter(fileContent);
 
-  type Items = {
-    [key: string]: string;
-  };
+    type Items = {
+      [key: string]: string;
+    };
 
-  const items: Items = {};
-  fields.forEach((field) => {
-    if (field === "slug") {
-      items[field] = slug;
-    }
-    if (field === "content") {
-      items[field] = content;
-    }
-    if (typeof data[field] !== "undefined") {
-      items[field] = data[field];
-    }
-  });
+    const items: Items = {};
+    fields.forEach((field) => {
+      if (field === "slug") {
+        items[field] = slug;
+      }
+      if (field === "content") {
+        items[field] = content;
+      }
+      if (typeof data[field] !== "undefined") {
+        items[field] = data[field];
+      }
+    });
 
-  return items;
+    return items;
+  } catch (e) {
+    return null;
+  }
 };

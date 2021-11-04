@@ -7,9 +7,12 @@ type Props = {
 };
 const Button: React.FunctionComponent<Props> = ({ slug, url, version }) => {
   const [isAdded, setIsAdded] = useState(false);
+  const [isUpdate, setIsUpdate] = useState(false);
 
   useEffect(() => {
-    setIsAdded(window.checkJuejinExtensionIsAdded?.(slug));
+    const { added, update } = window.checkJuejinExtension?.(slug, version);
+    setIsAdded(added);
+    setIsUpdate(update);
   }, []);
 
   const addExtension: React.MouseEventHandler<HTMLButtonElement> = async (
@@ -24,6 +27,7 @@ const Button: React.FunctionComponent<Props> = ({ slug, url, version }) => {
 
     if (result === "success") {
       setIsAdded(true);
+      setIsUpdate(false);
     }
   };
 
@@ -40,9 +44,16 @@ const Button: React.FunctionComponent<Props> = ({ slug, url, version }) => {
 
   if (isAdded) {
     return (
-      <button className="btn btn-red text-xs" onClick={removeExtension}>
-        移除
-      </button>
+      <div className="space-x-2">
+        {isUpdate ? (
+          <button className="btn btn-green text-xs" onClick={addExtension}>
+            更新
+          </button>
+        ) : null}
+        <button className="btn btn-red text-xs" onClick={removeExtension}>
+          移除
+        </button>
+      </div>
     );
   } else {
     return (

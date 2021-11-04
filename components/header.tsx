@@ -11,16 +11,22 @@ const Header: React.FunctionComponent = ({ children }) => {
     const file = fileList[0];
     const reader = new FileReader();
     reader.addEventListener("load", (event) => {
-      window.onAddLocalJuejinExtension(
+      const result = window.onAddLocalJuejinExtension(
         file.name,
         event.target?.result as string
       );
+      console.log(result);
+      e.target.value = "";
     });
     reader.readAsText(file, "utf-8");
   };
 
   const removeAllLocalExtensions = () => {
     window.onRemoveLocalJuejinExtension();
+  };
+
+  const cleanExtensionCache = () => {
+    window.cleanExtensionDataCaches();
   };
   return (
     <header className="max-w-4xl mx-auto py-4 flex items-center">
@@ -49,6 +55,9 @@ const Header: React.FunctionComponent = ({ children }) => {
           onClick={removeAllLocalExtensions}
         >
           移除本地扩展
+        </button>
+        <button className="btn text-xs border" onClick={cleanExtensionCache}>
+          清除缓存数据
         </button>
       </div>
     </header>

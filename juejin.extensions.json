@@ -1,7 +1,7 @@
 {
   "activity": {
     "title": "活动",
-    "extensions": ["OctoberPost"]
+    "extensions": ["juejin-post-tracker"]
   },
   "efficient": {
     "title": "效率工具",

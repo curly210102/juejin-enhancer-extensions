@@ -38,6 +38,7 @@ export const getAllCategories = () => {
             "rawURL",
             "preview",
             "description",
+            "version",
           ])
         )
         .filter(Boolean) as CategoryType["items"],

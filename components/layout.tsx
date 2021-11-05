@@ -12,7 +12,7 @@ const Layout: React.FunctionComponent = ({ children }) => {
       <Header />
       <main className="w-full flex-grow">{children}</main>
       <footer className="pt-4 pb-6 text-center border-t text-gray-300 text-sm">
-        <a href="">关于掘金小助手</a>
+        <a href="https://juejin.cn/post/7027032269994852389">关于掘金小助手</a>
       </footer>
     </div>
   );

@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "pages/api/check.ts": {
+      "includeFiles": "extensions/**/index.md"
+    }
+  }
+}

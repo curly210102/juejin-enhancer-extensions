@@ -1,13 +1,13 @@
 import extensions from "juejin.extensions.json";
-import { join } from "path";
-import fs from "fs";
+import { join, resolve } from "path";
+import { readdirSync, existsSync, readFileSync } from "fs";
 import matter from "gray-matter";
 import CategoryType from "types/category";
 
-const extensionDirectory = join(process.cwd(), "extensions");
+const extensionDirectory = resolve(process.cwd(), "extensions");
 
 export const getAllExtensionSlugs = () => {
-  const files = fs.readdirSync(extensionDirectory, {
+  const files = readdirSync(extensionDirectory, {
     withFileTypes: true,
   });
 
@@ -15,7 +15,7 @@ export const getAllExtensionSlugs = () => {
   files.forEach((file) => {
     if (
       file.isDirectory() &&
-      fs.existsSync(join(extensionDirectory, file.name, "README.md"))
+      existsSync(join(extensionDirectory, file.name, "index.md"))
     ) {
       slugs.push(file.name);
     }
@@ -54,8 +54,8 @@ export const getAllCategories = () => {
 
 export const getExtensionBySlug = (slug: string, fields: string[]) => {
   try {
-    const filePath = join(extensionDirectory, slug, "README.md");
-    const fileContent = fs.readFileSync(filePath, "utf8");
+    const filePath = join(extensionDirectory, slug, "index.md");
+    const fileContent = readFileSync(filePath, "utf8");
     const { data, content } = matter(fileContent);
 
     type Items = {
@@ -77,6 +77,7 @@ export const getExtensionBySlug = (slug: string, fields: string[]) => {
 
     return items;
   } catch (e) {
+    console.log(e);
     return null;
   }
 };

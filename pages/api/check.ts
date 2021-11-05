@@ -1,5 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import { getExtensionBySlug } from "libs/api";
+import { getExtensionBySlug } from "../../libs/api";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 type ExtInfo = {
@@ -28,7 +28,7 @@ export default function handler(
       updated: [],
     };
 
-    slugs.forEach((slug: string) => {
+    (typeof slugs === "string" ? [slugs] : slugs).forEach((slug: string) => {
       const ext = getExtensionBySlug(slug, ["slug", "version", "rawURL"]);
       if (!ext) {
         data.deleted.push(slug);

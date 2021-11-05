@@ -11,7 +11,7 @@ const Header: React.FunctionComponent = ({ children }) => {
     const file = fileList[0];
     const reader = new FileReader();
     reader.addEventListener("load", (event) => {
-      const result = window.onAddLocalJuejinExtension(
+      const result = window.onAddLocalJuejinExtension?.(
         file.name,
         event.target?.result as string
       );
@@ -22,11 +22,11 @@ const Header: React.FunctionComponent = ({ children }) => {
   };
 
   const removeAllLocalExtensions = () => {
-    window.onRemoveLocalJuejinExtension();
+    window.onRemoveLocalJuejinExtension?.();
   };
 
   const cleanExtensionCache = () => {
-    window.cleanExtensionDataCaches();
+    window.cleanExtensionDataCaches?.();
   };
   return (
     <header className="max-w-4xl mx-auto py-4 flex items-center">

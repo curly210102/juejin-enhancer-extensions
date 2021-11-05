@@ -10,10 +10,11 @@ const Button: React.FunctionComponent<Props> = ({ slug, url, version }) => {
   const [isUpdate, setIsUpdate] = useState(false);
 
   useEffect(() => {
-    const { added, update } = window.checkJuejinExtension?.(slug, version);
+    const result = window.checkJuejinExtension?.(slug, version) ?? {};
+    const { added, update } = result;
     setIsAdded(added);
     setIsUpdate(update);
-  }, []);
+  }, [slug, version]);
 
   const addExtension: React.MouseEventHandler<HTMLButtonElement> = async (
     e

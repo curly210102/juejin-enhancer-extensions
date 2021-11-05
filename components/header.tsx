@@ -29,7 +29,7 @@ const Header: React.FunctionComponent = ({ children }) => {
     window.cleanExtensionDataCaches?.();
   };
   return (
-    <header className="max-w-4xl mx-auto py-4 flex items-center">
+    <header className="w-full py-4 flex items-center">
       <Link href="/" passHref>
         <div className="h-8 flex items-center space-x-2 cursor-pointer">
           <div className="font-medium">掘金小助手</div>

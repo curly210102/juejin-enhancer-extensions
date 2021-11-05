@@ -29,7 +29,10 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
                     version = "",
                   }) => {
                     return (
-                      <div key={slug} className="rounded-md bg-white shadow">
+                      <div
+                        key={slug}
+                        className="rounded-md bg-white shadow my-4"
+                      >
                         <a href={`/extensions/${slug}`} className="flex">
                           <div
                             className="w-2/5 bg-cover bg-center bg-no-repeat"

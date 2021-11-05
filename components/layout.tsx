@@ -3,14 +3,17 @@ import Header from "./header";
 
 const Layout: React.FunctionComponent = ({ children }) => {
   return (
-    <div className="w-full px-8 pb-10">
+    <div className="max-w-4xl mx-auto w-full px-8 min-h-screen flex flex-col">
       <Head>
         <title>掘金小助手 | 扩展市场</title>
         <meta name="description" content="为掘金社区提供第三方功能辅助" />
         <link rel="icon" href="/favicon.png" />
       </Head>
       <Header />
-      <main className="max-w-4xl mx-auto">{children}</main>
+      <main className="w-full flex-grow">{children}</main>
+      <footer className="pt-4 pb-6 text-center border-t text-gray-300 text-sm">
+        <a href="">关于掘金小助手</a>
+      </footer>
     </div>
   );
 };

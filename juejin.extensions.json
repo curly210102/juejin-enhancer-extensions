@@ -5,7 +5,7 @@
   },
   "efficient": {
     "title": "效率工具",
-    "extensions": ["juejin-daily-check-in"]
+    "extensions": ["juejin-daily-check-in", "juejin-publish-ontime"]
   },
   "data": {
     "title": "数据统计",

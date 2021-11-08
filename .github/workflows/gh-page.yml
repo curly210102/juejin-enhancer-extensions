@@ -17,9 +17,9 @@ jobs:
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.5
-        env:
-          BRANCH: gh-pages
-          FOLDER: out
+        with:
+          branch: gh-pages
+          folder: out
 
       - name: Sync to Gitee
         uses: wearerequired/git-mirror-action@v1.1.0

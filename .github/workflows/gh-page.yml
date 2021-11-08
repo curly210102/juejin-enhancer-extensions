@@ -27,4 +27,4 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.GITEE_PRIVATE_KEY }}
         with:
           source-repo: git@github.com:curly210102/juejin-enhancer-extensions.git
-          destination-repo: git@gitee.com:curlly-brackets/juejin-enhancer-extensions.git
+          destination-repo: git@e.coding.net:curlybrackets/juejin-enhancer/juejin-enhancer-extensions.git

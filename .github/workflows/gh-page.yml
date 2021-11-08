@@ -4,7 +4,7 @@ on:
     branches:
       - main
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -20,3 +20,11 @@ jobs:
         env:
           BRANCH: gh-pages
           FOLDER: out
+
+      - name: Sync to Gitee
+        uses: wearerequired/git-mirror-action@v1.1.0
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.GITEE_PRIVATE_KEY }}
+        with:
+          source-repo: git@github.com:curly210102/juejin-enhancer-extensions.git
+          destination-repo: git@gitee.com:curlly-brackets/juejin-enhancer-extensions.git

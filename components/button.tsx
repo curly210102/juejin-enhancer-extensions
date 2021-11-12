@@ -29,6 +29,8 @@ const Button: React.FunctionComponent<Props> = ({ slug, url, version }) => {
     if (result === "success") {
       setIsAdded(true);
       setIsUpdate(false);
+    } else {
+      alert(result);
     }
   };
 
@@ -40,6 +42,8 @@ const Button: React.FunctionComponent<Props> = ({ slug, url, version }) => {
     const result = await window.onRemoveJuejinExtension?.(slug);
     if (result === "success") {
       setIsAdded(false);
+    } else {
+      alert(result);
     }
   };
 

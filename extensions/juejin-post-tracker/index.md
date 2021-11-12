@@ -1,7 +1,7 @@
 ---
 title: 更文活动小助手
 description: 追踪每月更文活动，推算当前参与进度
-version: 0.0.3
+version: 0.0.4
 rawURL: https://gitee.com/curlly-brackets/juejin-post-tracker/raw/main/main.user.js
 preview: /preview.png
 author: Curly Brackets
@@ -12,7 +12,15 @@ repo: https://github.com/curly210102/UserScripts
 
 小助手会跟进掘金上线的活动，提供进度追踪、数据统计、操作辅助等功能。
 
+# 更新日志
+
+## 0.0.4
+
+- 修复暴力猴无法发送网络请求
+
 # 已支持过的活动
+
+## 2021 年最后一次更文活动
 
 ## “程序员必懂小知识”创作挑战 + “掘力星计划”
 

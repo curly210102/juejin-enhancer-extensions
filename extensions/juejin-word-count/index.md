@@ -1,7 +1,7 @@
 ---
 title: 字数统计
 description: 编辑时显示当前字数，阅读文章时预告文章字数
-version: 0.0.1
+version: 0.0.2
 rawURL: https://gitee.com/curlly-brackets/juejin-word-count/raw/main/main.user.js
 preview: /word-count.png
 author: Curly Brackets

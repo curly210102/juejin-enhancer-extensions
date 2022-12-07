@@ -1,7 +1,7 @@
 ---
 title: 更文活动小助手
 description: 追踪每月更文活动，推算当前参与进度
-version: 0.0.9
+version: 0.1.0
 rawURL: https://gitee.com/curlly-brackets/juejin-post-tracker/raw/main/main.user.js
 preview: /preview.png
 author: Curly Brackets
@@ -14,7 +14,7 @@ repo: https://github.com/curly210102/UserScripts
 
 # 更新日志
 
-## 0.0.9
+## 0.1.0
 
 - 支持掘金日新计划｜12月更文活动
 
